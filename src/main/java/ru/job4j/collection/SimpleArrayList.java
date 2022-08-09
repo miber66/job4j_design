@@ -11,7 +11,7 @@ public class SimpleArrayList<T> implements SimpleList<T> {
         this.container = (T[]) new Object[capacity];
     }
 
-    public void arrayExpansion() {
+    private void arrayExpansion() {
         if (container.length == 0) {
             container = Arrays.copyOf(container, 10);
         }
