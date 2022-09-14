@@ -21,7 +21,7 @@ public class Config {
                 if (!s.startsWith("#") && !s.isEmpty()) {
                     String[] str = s.split("=", 2);
                     if (str.length != 2 || str[0].isBlank() || str[1].isBlank()) {
-                        throw new IllegalArgumentException();
+                        throw new IllegalArgumentException("String %s does not match the template \"key=value\"");
                     }
                     values.put(str[0], str[1]);
                 }

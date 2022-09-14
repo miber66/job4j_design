@@ -28,4 +28,20 @@ class ConfigTest {
         assertThatThrownBy(config::load)
                 .isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    public void whenPairWithoutKey() {
+        String path = "./data/pair_without_key.properties";
+        Config config = new Config(path);
+        assertThatThrownBy(config::load)
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    public void whenPairWithoutValue() {
+        String path = "./data/pair_without_value.properties";
+        Config config = new Config(path);
+        assertThatThrownBy(config::load)
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
